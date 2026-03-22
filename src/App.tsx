@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
+import { ColorControls } from "@/components/color-controls";
 
 const THEMES = [
   "catppuccin-mocha",
@@ -435,6 +436,11 @@ function App() {
               </Select>
             </div>
           </div>
+
+          <Separator />
+
+          {/* Colors */}
+          <ColorControls />
         </div>
       </aside>
 
