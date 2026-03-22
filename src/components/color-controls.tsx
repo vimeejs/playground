@@ -129,7 +129,7 @@ function ColorRow({
   onAlphaChange: (variable: string, alpha: number) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const handlePickerInput = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
