@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# vimee playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive playground for [@vimee/shiki-editor](https://github.com/vimeejs) — try the vim editor in your browser, tweak settings, and inspect every action in real time.
 
-Currently, two official plugins are available:
+**Live:** [playground.vimee.dev](https://playground.vimee.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Vim editor** powered by `@vimee/shiki-editor` with full syntax highlighting via [Shiki](https://shiki.matsu.io/)
+- **Theme switcher** — catppuccin-mocha, dracula, nord, tokyo-night, and more
+- **Language selector** — Go, TypeScript, JavaScript, Python, Rust, HTML, CSS, JSON, Markdown, Bash
+- **Editor options** — toggle line numbers, read-only mode, indent style (tabs/spaces), indent width
+- **Editor color controls** — customize `--sv-*` CSS variables (cursor, selection, gutter, statusline, focus) with color pickers and alpha sliders
+- **Action log** — every vim action (`cursor-move`, `content-change`, `mode-change`, `yank`, `save`, etc.) is logged in reverse chronological order with keystroke and payload details
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) 19
+- [Vite](https://vite.dev/) 8
+- [Tailwind CSS](https://tailwindcss.com/) v4
+- [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- [Shiki](https://shiki.matsu.io/) v4
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Local development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Bun](https://bun.sh/) (v1.2+)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/vimeejs/playground.git
+cd playground
+
+# Install dependencies
+bun install
+
+# Start the dev server
+bun run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server starts at [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun run build
 ```
+
+Output is written to `dist/`. You can preview the production build with:
+
+```bash
+bun run preview
+```
+
+## License
+
+MIT
