@@ -15,6 +15,7 @@
     "@fontsource-variable/geist": "^5.2.8",
     "@vimee/core": "^0.1.1",
     "@vimee/react": "^0.1.2",
+    "@vimee/plugin-textarea": "^0.1.2",
     "@vimee/shiki-editor": "^0.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
