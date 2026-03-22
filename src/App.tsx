@@ -3,6 +3,7 @@ import type { VimAction } from "@vimee/core";
 import { Vim } from "@vimee/shiki-editor";
 import "@vimee/shiki-editor/styles.css";
 import { createHighlighter } from "shiki";
+import type { BundledLanguage, BundledTheme } from "shiki";
 
 import {
   Select,
@@ -282,8 +283,8 @@ interface ActionLog {
 }
 
 function App() {
-  const [theme, setTheme] = useState<string>("catppuccin-mocha");
-  const [lang, setLang] = useState<string>("go");
+  const [theme, setTheme] = useState<BundledTheme>("catppuccin-mocha");
+  const [lang, setLang] = useState<BundledLanguage>("go");
   const [showLineNumbers, setShowLineNumbers] = useState(true);
   const [readOnly, setReadOnly] = useState(false);
   const [indentStyle, setIndentStyle] = useState<"space" | "tab">("tab");
@@ -337,7 +338,7 @@ function App() {
             <Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Theme
             </Label>
-            <Select value={theme} onValueChange={setTheme}>
+            <Select value={theme} onValueChange={(v) => setTheme(v as BundledTheme)}>
               <SelectTrigger className="h-8 text-sm">
                 <SelectValue />
               </SelectTrigger>
@@ -356,7 +357,7 @@ function App() {
             <Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Language
             </Label>
-            <Select value={lang} onValueChange={setLang}>
+            <Select value={lang} onValueChange={(v) => setLang(v as BundledLanguage)}>
               <SelectTrigger className="h-8 text-sm">
                 <SelectValue />
               </SelectTrigger>
