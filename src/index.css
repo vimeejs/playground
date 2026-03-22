@@ -128,3 +128,19 @@
     @apply font-sans;
     }
 }
+
+/* react-split */
+.gutter {
+  background-color: var(--border);
+  cursor: row-resize;
+  transition: background-color 0.15s;
+  flex-shrink: 0;
+}
+
+.gutter:hover {
+  background-color: var(--ring);
+}
+
+.split > div {
+  overflow: hidden;
+}
