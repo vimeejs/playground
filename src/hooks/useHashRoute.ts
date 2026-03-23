@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 
-type Route = "shiki-editor" | "textarea";
+type Route = "shiki-editor" | "textarea" | "monaco";
 
 function getRoute(): Route {
   const hash = window.location.hash.replace("#/", "");
   if (hash === "textarea") return "textarea";
+  if (hash === "monaco") return "monaco";
   return "shiki-editor";
 }
 

@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { useHashRoute } from "@/hooks/useHashRoute";
 import { ShikiEditorPage } from "@/pages/ShikiEditorPage";
 import { TextareaPage } from "@/pages/TextareaPage";
+import { MonacoPage } from "@/pages/MonacoPage";
 
 function App() {
   const { route, navigate } = useHashRoute();
@@ -39,6 +40,17 @@ function App() {
           >
             textarea
           </button>
+          <button
+            type="button"
+            onClick={() => navigate("monaco")}
+            className={`px-3 py-1 text-sm rounded-md transition-colors ${
+              route === "monaco"
+                ? "bg-accent text-accent-foreground font-medium"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            monaco
+          </button>
         </nav>
         <div className="flex items-center gap-3">
           <a
@@ -52,7 +64,13 @@ function App() {
         </div>
       </header>
 
-      {route === "shiki-editor" ? <ShikiEditorPage /> : <TextareaPage />}
+      {route === "shiki-editor" ? (
+        <ShikiEditorPage />
+      ) : route === "textarea" ? (
+        <TextareaPage />
+      ) : (
+        <MonacoPage />
+      )}
     </div>
   );
 }
