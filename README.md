@@ -2,6 +2,8 @@
 
 An interactive playground for [@vimee/shiki-editor](https://github.com/vimeejs) — try the vim editor in your browser, tweak settings, and inspect every action in real time.
 
+![playground](./assets/vimee playground.png)
+
 **Live:** [playground.vimee.dev](https://playground.vimee.dev)
 
 ## Features
