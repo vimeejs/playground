@@ -37,7 +37,7 @@ for (const user of users) {
 }
 `;
 
-export function TextareaPage() {
+export function TextareaPage({ fullscreen = false }: { fullscreen?: boolean }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [mode, setMode] = useState<VimMode>("normal");
   const [cursor, setCursor] = useState({ line: 0, col: 0 });
@@ -73,6 +73,19 @@ export function TextareaPage() {
     "visual-block": "text-purple-400",
     "command-line": "text-foreground",
   };
+
+  if (fullscreen) {
+    return (
+      <textarea
+        ref={textareaRef}
+        defaultValue={DEFAULT_CONTENT}
+        className="h-full w-full resize-none bg-[#1e1e1e] text-[#d4d4d4] font-mono text-sm p-4 leading-relaxed focus:outline-none"
+        spellCheck={false}
+        autoComplete="off"
+        autoFocus
+      />
+    );
+  }
 
   return (
     <>

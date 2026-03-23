@@ -282,7 +282,7 @@ interface ActionLog {
   key: string;
 }
 
-export function ShikiEditorPage() {
+export function ShikiEditorPage({ fullscreen = false }: { fullscreen?: boolean }) {
   const [theme, setTheme] = useState<BundledTheme>("catppuccin-mocha");
   const [lang, setLang] = useState<BundledLanguage>("go");
   const [showLineNumbers, setShowLineNumbers] = useState(true);
@@ -305,6 +305,27 @@ export function ShikiEditorPage() {
       return next.length > 200 ? next.slice(0, 200) : next;
     });
   }, []);
+
+  if (fullscreen) {
+    return (
+      <div className="h-full w-full overflow-auto">
+        <Vim
+          content={DEFAULT_CONTENT}
+          highlighter={highlighter}
+          lang={lang}
+          theme={theme}
+          showLineNumbers={showLineNumbers}
+          readOnly={readOnly}
+          indentStyle={indentStyle}
+          indentWidth={indentWidth}
+          autoFocus
+          onChange={(c) => console.log("Changed:", c)}
+          onSave={(c) => console.log("Saved:", c)}
+          onAction={handleAction}
+        />
+      </div>
+    );
+  }
 
   return (
     <>

@@ -1,3 +1,5 @@
+import { useCallback, useState } from "react";
+import { Maximize2, Minimize2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useHashRoute } from "@/hooks/useHashRoute";
 import { ShikiEditorPage } from "@/pages/ShikiEditorPage";
@@ -6,6 +8,34 @@ import { MonacoPage } from "@/pages/MonacoPage";
 
 function App() {
   const { route, navigate } = useHashRoute();
+  const [fullscreen, setFullscreen] = useState(false);
+
+  const exitFullscreen = useCallback(() => setFullscreen(false), []);
+
+  const page =
+    route === "shiki-editor" ? (
+      <ShikiEditorPage fullscreen={fullscreen} />
+    ) : route === "textarea" ? (
+      <TextareaPage fullscreen={fullscreen} />
+    ) : (
+      <MonacoPage fullscreen={fullscreen} />
+    );
+
+  if (fullscreen) {
+    return (
+      <div className="h-screen w-screen bg-background text-foreground overflow-hidden relative">
+        <button
+          type="button"
+          onClick={exitFullscreen}
+          className="absolute top-2 right-2 z-50 p-1.5 rounded-md bg-background/80 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors backdrop-blur-sm"
+          title="Exit fullscreen"
+        >
+          <Minimize2 className="size-4" />
+        </button>
+        {page}
+      </div>
+    );
+  }
 
   return (
     <div className="grid h-screen max-h-screen grid-cols-12 grid-rows-[auto_8fr_4fr] bg-background text-foreground overflow-hidden">
@@ -53,6 +83,14 @@ function App() {
           </button>
         </nav>
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setFullscreen(true)}
+            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            title="Fullscreen"
+          >
+            <Maximize2 className="size-4" />
+          </button>
           <a
             href="https://github.com/vimeejs/playground"
             target="_blank"
@@ -64,13 +102,7 @@ function App() {
         </div>
       </header>
 
-      {route === "shiki-editor" ? (
-        <ShikiEditorPage />
-      ) : route === "textarea" ? (
-        <TextareaPage />
-      ) : (
-        <MonacoPage />
-      )}
+      {page}
     </div>
   );
 }

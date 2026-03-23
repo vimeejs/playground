@@ -71,7 +71,7 @@ for (const user of users) {
 }
 `;
 
-export function MonacoPage() {
+export function MonacoPage({ fullscreen = false }: { fullscreen?: boolean }) {
   const vimRef = useRef<VimMonaco | null>(null);
   const [mode, setMode] = useState<VimMode>("normal");
   const [cursor, setCursor] = useState({ line: 0, col: 0 });
@@ -129,6 +129,31 @@ export function MonacoPage() {
     "visual-block": "text-purple-400",
     "command-line": "text-foreground",
   };
+
+  const editorElement = (
+    <Editor
+      defaultValue={DEFAULT_CONTENT}
+      language={language}
+      theme={theme}
+      onMount={handleEditorMount}
+      options={{
+        fontSize: 14,
+        fontFamily: "monospace",
+        lineNumbers: lineNumbers ? "on" : "off",
+        minimap: { enabled: minimap },
+        scrollBeyondLastLine: false,
+        renderLineHighlight: "all",
+        padding: { top: 16 },
+        tabSize: indentWidth,
+        insertSpaces: indentStyle === "space",
+        readOnly,
+      }}
+    />
+  );
+
+  if (fullscreen) {
+    return <div className="h-full w-full">{editorElement}</div>;
+  }
 
   return (
     <>
@@ -271,24 +296,7 @@ export function MonacoPage() {
 
       {/* Monaco Editor */}
       <div className="col-span-10 row-span-2 overflow-hidden">
-        <Editor
-          defaultValue={DEFAULT_CONTENT}
-          language={language}
-          theme={theme}
-          onMount={handleEditorMount}
-          options={{
-            fontSize: 14,
-            fontFamily: "monospace",
-            lineNumbers: lineNumbers ? "on" : "off",
-            minimap: { enabled: minimap },
-            scrollBeyondLastLine: false,
-            renderLineHighlight: "all",
-            padding: { top: 16 },
-            tabSize: indentWidth,
-            insertSpaces: indentStyle === "space",
-            readOnly,
-          }}
-        />
+        {editorElement}
       </div>
     </>
   );
