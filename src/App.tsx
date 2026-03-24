@@ -5,6 +5,7 @@ import { useHashRoute } from "@/hooks/useHashRoute";
 import { ShikiEditorPage } from "@/pages/ShikiEditorPage";
 import { TextareaPage } from "@/pages/TextareaPage";
 import { MonacoPage } from "@/pages/MonacoPage";
+import { CodeMirrorPage } from "@/pages/CodeMirrorPage";
 
 function App() {
   const { route, navigate } = useHashRoute();
@@ -17,6 +18,8 @@ function App() {
       <ShikiEditorPage fullscreen={fullscreen} />
     ) : route === "textarea" ? (
       <TextareaPage fullscreen={fullscreen} />
+    ) : route === "codemirror" ? (
+      <CodeMirrorPage fullscreen={fullscreen} />
     ) : (
       <MonacoPage fullscreen={fullscreen} />
     );
@@ -80,6 +83,17 @@ function App() {
             }`}
           >
             monaco
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate("codemirror")}
+            className={`px-3 py-1 text-sm rounded-md transition-colors ${
+              route === "codemirror"
+                ? "bg-accent text-accent-foreground font-medium"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            codemirror
           </button>
         </nav>
         <div className="flex items-center gap-3">
