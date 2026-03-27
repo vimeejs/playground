@@ -24,7 +24,7 @@
         "@monaco-editor/react": "4.7.0",
         "@vimee/core": "0.2.0",
         "@vimee/plugin-codemirror": "0.1.0",
-        "@vimee/plugin-monaco": "0.1.0",
+        "@vimee/plugin-monaco": "0.2.0",
         "@vimee/plugin-textarea": "0.1.2",
         "@vimee/react": "0.2.0",
         "@vimee/shiki-editor": "0.2.0",
@@ -606,7 +606,7 @@
 
     "@vimee/plugin-codemirror": ["@vimee/plugin-codemirror@0.1.0", "", { "peerDependencies": { "@codemirror/state": "6.6.0", "@codemirror/view": "6.40.0", "@vimee/core": "0.2.0" } }, "sha512-yfVttHgww7NhGe74VXcsfU5rnIgePc+133nTvlSSul2YmoKnn4JJcwY053rCVhDwfywdW4XTECZxg0CRZKG30w=="],
 
-    "@vimee/plugin-monaco": ["@vimee/plugin-monaco@0.1.0", "", { "peerDependencies": { "@vimee/core": "0.2.0", "monaco-editor": ">=0.34.0" } }, "sha512-82jVSe50ykHrUTJTnPTXAOGiXbtCiazvp7GMaE9OwZobunB4iiMjB8r1E9yE4UM6PdU0i40Z+SGgqv9MH1XBmg=="],
+    "@vimee/plugin-monaco": ["@vimee/plugin-monaco@0.2.0", "", { "peerDependencies": { "@vimee/core": ">=0.1.0 <1.0.0", "monaco-editor": ">=0.34.0" } }, "sha512-lT4Po63yNVgPLZuVPmjBLWx0932IjzmGBSXL3rpBSKAuRpAnbAnrRk2s6v/Py+iLvrWFw5Rp/eM+xrtmfnZyLg=="],
 
     "@vimee/plugin-textarea": ["@vimee/plugin-textarea@0.1.2", "", { "peerDependencies": { "@vimee/core": ">=0.1.0" } }, "sha512-iSmFxm0gnsTinUdrH0JqKaUN00Tm0JRO8Q20ZMFNGHw8mFbe8DQmRCCIOo3POUdyQKHUR04CvKUMb1CRmFbyUA=="],
 
