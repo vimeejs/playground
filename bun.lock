@@ -22,7 +22,7 @@
         "@codemirror/view": "6.40.0",
         "@fontsource-variable/geist": "5.2.8",
         "@monaco-editor/react": "4.7.0",
-        "@vimee/core": "0.2.0",
+        "@vimee/core": "0.3.0",
         "@vimee/plugin-codemirror": "0.1.0",
         "@vimee/plugin-monaco": "0.2.0",
         "@vimee/plugin-textarea": "0.1.2",
@@ -602,7 +602,7 @@
 
     "@ungap/structured-clone": ["@ungap/structured-clone@1.3.0", "", {}, "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g=="],
 
-    "@vimee/core": ["@vimee/core@0.2.0", "", {}, "sha512-n7MJU4rfWCK9+1f8v4wfUvWL+rRu/4m/EaPOjI8ZZG4l5uLgg5enTy27cr/jFi5EEdIotWn6iS3QaxZjHt3bCQ=="],
+    "@vimee/core": ["@vimee/core@0.3.0", "", {}, "sha512-aC44fw6HhmjrbJMafAk3oUZIDpFbgNebbDsWwMIFD0WwnOUZPETgzU3HYQetmwz0e38JY3I/g8CJXRQjspgJZw=="],
 
     "@vimee/plugin-codemirror": ["@vimee/plugin-codemirror@0.1.0", "", { "peerDependencies": { "@codemirror/state": "6.6.0", "@codemirror/view": "6.40.0", "@vimee/core": "0.2.0" } }, "sha512-yfVttHgww7NhGe74VXcsfU5rnIgePc+133nTvlSSul2YmoKnn4JJcwY053rCVhDwfywdW4XTECZxg0CRZKG30w=="],
 
