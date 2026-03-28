@@ -27,7 +27,7 @@
     "@codemirror/view": "6.40.0",
     "@fontsource-variable/geist": "5.2.8",
     "@monaco-editor/react": "4.7.0",
-    "@vimee/core": "0.2.0",
+    "@vimee/core": "0.3.0",
     "@vimee/plugin-codemirror": "0.1.0",
     "@vimee/plugin-monaco": "0.2.0",
     "@vimee/plugin-textarea": "0.1.2",
