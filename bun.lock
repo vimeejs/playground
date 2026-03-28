@@ -26,7 +26,7 @@
         "@vimee/plugin-codemirror": "0.1.0",
         "@vimee/plugin-monaco": "0.2.0",
         "@vimee/plugin-textarea": "0.1.2",
-        "@vimee/react": "0.2.0",
+        "@vimee/react": "0.3.0",
         "@vimee/shiki-editor": "0.2.0",
         "class-variance-authority": "0.7.1",
         "clsx": "2.1.1",
@@ -610,7 +610,7 @@
 
     "@vimee/plugin-textarea": ["@vimee/plugin-textarea@0.1.2", "", { "peerDependencies": { "@vimee/core": ">=0.1.0" } }, "sha512-iSmFxm0gnsTinUdrH0JqKaUN00Tm0JRO8Q20ZMFNGHw8mFbe8DQmRCCIOo3POUdyQKHUR04CvKUMb1CRmFbyUA=="],
 
-    "@vimee/react": ["@vimee/react@0.2.0", "", { "peerDependencies": { "@vimee/core": ">=0.1.0", "react": ">=18.0.0" } }, "sha512-s17NVrnzRq05k9TDtRWYFDfhXlELC4QJI9ItXVqa7+4zSknBLg3NewxpnlLe3bvY9bof7jo2pO0+McgZrq+jmQ=="],
+    "@vimee/react": ["@vimee/react@0.3.0", "", { "peerDependencies": { "@vimee/core": ">=0.1.0 <1.0.0", "react": "^19.0.0" } }, "sha512-7rzoHwEaovR7y0ESwiMBpclXJMpE1gBOdo2jmhkM/uN2vikbBtLMzZptU5nkCzjTP3Bi+U941nCVHuEh2k8TCg=="],
 
     "@vimee/shiki-editor": ["@vimee/shiki-editor@0.2.0", "", { "peerDependencies": { "@vimee/core": ">=0.1.0", "@vimee/react": ">=0.1.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "shiki": ">=1.0.0" } }, "sha512-wy3tfCsqcdEfpDJJezy6NB85bd6/DBT2SeOBYAE41OuFaLsnTFDODxrqg/6bUJpkIvoodSREXwwFJ5N49p6o0A=="],
 

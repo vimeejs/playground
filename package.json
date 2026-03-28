@@ -31,7 +31,7 @@
     "@vimee/plugin-codemirror": "0.1.0",
     "@vimee/plugin-monaco": "0.2.0",
     "@vimee/plugin-textarea": "0.1.2",
-    "@vimee/react": "0.2.0",
+    "@vimee/react": "0.3.0",
     "@vimee/shiki-editor": "0.2.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
